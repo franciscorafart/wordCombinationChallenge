@@ -24,22 +24,26 @@ class Solution {
     String[] array3 = new String[]{"fox", "dog"};
 
     String[][] arrays = {array1, array2, array3};
+    
     ArrayList<String> strings = new ArrayList<String>();
     ArrayList<ArrayList<String>> finalResult = new ArrayList<ArrayList<String>>();
 
-    int combinations = combine(arrays);
-    System.out.println("Combinations = " + combinations);
+    int combinations = combine(arrays); //Define the number of all the possible combinations given the number of elements in the arrays
 
-    //Determine the number by which I'm dividing
+    //Each element in the array will be repeated according to a division of the total combinations.
+    
     int division = combinations;
+    // This for loop determines the number of times in which each element in the array will be repeated, in order to combine it with the
+    //elements of the other arrays
     for (int i=0;i<arrays.length; i++){
+    
     division = division/arrays[i].length;
-    //System.out.println("Division = " + division);
+    //Here I unwrap the 
     strings = unwrap(arrays[i],division,combinations);
     finalResult.add(strings);
     }
 
-    //Print out
+    //Print out the final result with all the combinations
     for (int i = 0; i<combinations;i++){
 
       for(int j = 0; j<finalResult.size();j++){
@@ -48,15 +52,9 @@ class Solution {
       }
       System.out.println(" ");
     }
-
-    /*
-    for (String string : strings) {
-      System.out.println(string);
-
-    }
-    */
   }
-
+  
+  //Function that unwraps all the possible combinations of the arrays of strings
   public static ArrayList<String> unwrap(String[] arrayInput, int repetitions, int combinations) {
 
     int repetitionTemp = repetitions;
@@ -74,7 +72,7 @@ class Solution {
        repetitionTemp = repetitions-1;
        inicial++;
 
-       //guard that inicial doesn't become bigger than the size. Start from begginin og array
+       //guard that inicial doesn't become bigger than the size. Start from begginin of array
         if(inicial >= arrayInput.length){
          inicial = 0;
         }
@@ -82,7 +80,6 @@ class Solution {
        result.add(i, arrayInput[inicial]);
     }
 
-    //System.out.println(arrayInput[inicial]);
    }
 
     return result;
