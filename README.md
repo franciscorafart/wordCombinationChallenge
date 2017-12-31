@@ -1,5 +1,4 @@
 # Word Combination Challenge
-A word combination challenge for a job application. Here are the instructions:
 
 You're given a vector of vectors of words, e.g.:
 [['quick', 'lazy'], ['brown', 'black', 'grey'], ['fox', 'dog']].
