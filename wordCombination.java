@@ -71,19 +71,14 @@ class Solution {
     } else {
        repetitionTemp = repetitions-1;
        inicial++;
-
        //guard that inicial doesn't become bigger than the size. Start from begginin of array
         if(inicial >= arrayInput.length){
          inicial = 0;
         }
-
        result.add(i, arrayInput[inicial]);
     }
-
    }
-
     return result;
-
   }
 
   public static int combine(String[][] arrays){
